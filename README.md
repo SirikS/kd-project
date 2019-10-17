@@ -7,5 +7,7 @@ basic stappen voor commiten:
 3. `git commit -m "Message to go with the commit here"`
 4. `git push`
 
-om the checken of je niks bent vergeten kan je `git status` runnen.
-om alle files in een keer te "adden" kan je `git add *` doen.
+Om the checken of je niks bent vergeten kan je `git status` runnen.
+Om alle files in een keer te "adden" kan je `git add *` doen.
+
+Als git ergens een error geeft volg dan wat hij zegt en vraag mij anders.
