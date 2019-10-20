@@ -13,7 +13,26 @@
     <link href= {{ url_for('static', filename = 'bootstrap.min.css') }} rel="stylesheet">
 	<link href= {{ url_for('static', filename = 'css-custom.css') }} rel="stylesheet">
 
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
 
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          /* Toggle between adding and removing the "active" class,
+          to highlight the button that controls the panel */
+          this.classList.toggle("active");
+
+          /* Toggle between hiding and showing the active panel */
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
   </head>
 
   <body ng-controller="MainCtrl">
@@ -32,12 +51,23 @@
 		 <div class="container mt-5 mb-5">
 		   <div class="row">
 		     <div class="col-8">
-	   		 <h2>Give a name for your Web Application</h2>
-          <div class="input-group">
-            <input type="text" class="form-control" ng-model="myInputAppName" placeholder="Type here the name of your Web Application" >
+            <form>
+              <h2>Inputs</h2>
+                <button class="accordion">Section 1</button>
+                  <div class="panel">
+                      <input type="checkbox" id="contactChoice1" name="contact" value="email">
+                      <label for="contactChoice1">Pork</label>
+                  </div>
+                    <input type="checkbox" id="contactChoice2" name="contact" value="phone">
+                    <label for="contactChoice2">Phone</label>
+                
+                    <input type="checkbox" id="contactChoice3" name="contact" value="mail">
+                    <label for="contactChoice3">Mail</label>
+                        <!-- <div class="input-group">
+                        <input type="text" class="form-control" ng-model="myInputAppName" placeholder="Type here the name of your Web Application" > -->
           </div>
-		   	 </div>
-		 </div>
+		   	</div>
+		  </div>
 	 	</div>
 
 		 <div class="container mt-5 mb-5">
