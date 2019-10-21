@@ -25,6 +25,14 @@ app.config["SESSION_TYPE"] = "filesystem"
 @app.route("/")
 def index():
     """
+    Renders the select ingredients screen
+    """
+    return render_template("index.html")
+
+@app.route("/results")
+def index():
+    """
     Renders the login/register screen
     """
+    # TODO
     return render_template("index.html")
