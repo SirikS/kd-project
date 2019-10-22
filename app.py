@@ -56,7 +56,7 @@ def not_index():
 
         # make the recommendations, and return these
         data = recommend(ingredientlist, appliancelist)
-        return render_template("index.html", data=data)
+        return render_template("results.html", data=data)
 
     # make the user fill in the form
     return render_template("index.html")
