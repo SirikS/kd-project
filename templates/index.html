@@ -19,32 +19,19 @@
 
   </head>
 
-  <body ng-controller="MainCtrl">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-acl mb-5">
-	  <a class="navbar-brand" href="#">
-		  Data Integration and App Building
-	    </a>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container mb-5">
-
-		 <div class="container mt-5 mb-5">
-		   <div class="row">
-		     <div class="col-12">
-           <h2>What ingredients do you have?</h2>
-           <form action="{{ url_for('not_index') }}" method="post">
-            <div id="accordion" role="tablist">
-                <div class="card">
-                  <div class="card-header" role="tab" id="headingOne">
-                    <h5 class="mb-0">
-                      <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Dairy
-                      </a>
-                    </h5>
-                  </div>
+  <body>
+  <div class="container">
+  <h2>What ingredients do you have?</h2>
+    <form action="{{ url_for('not_index') }}" method="post">
+      <div id="accordion" role="tablist">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Dairy
+              </a>
+            </h5>
+          </div>
               
                   <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
@@ -400,56 +387,6 @@
               <input type="submit" value="submit">
             </form>
           </div>
-		   	</div>
-		  </div>
-	 	</div>
-
-		 <div class="container mt-5 mb-5">
-		   <div class="row">
-		     <div class="col-8 align-self-center">
-				   <!-- TODO : Ex 2 here -->
-             <h2>Which Knowledge Graph are you going to query?</h2>
-               <div class="input-group">
-                 <input type="text" class="form-control" name="myInputEndPoint" placeholder="Type here your SPARQL endpoint" >
-               </div>
-			     </div>
-		   </div>
-		 </div>
-
-		 <div class="container mt-5 mb-5">
-		   <div class="row">
-  		     <div class="col-8">
-              <h2>What is your Query?</h2>
-             <div class="input-group">
-               <input type="text" class="form-control" name="myInputQuery" placeholder="Type here your SPARQL query" >
-               <div class="input-group-append">
-                 <button class="btn btn-outline-secondary" ng-click="launchMyGreatApp()" type="button">GO!</button>
-               </div>
-             </div>
-  		     </div>
-		    </div>
-		 </div>
-    </div>
-
-
-    <div class="container mt-5 mb-5">
-      <div class="row">
-          <div class="col-8">
-             <h2><font color="red">{{myDisplayMessage}}</font></h2>
-             <canvas class="chart chart-pie" chart-data="myDynamicData" chart-labels="myDynamicLabels"> </canvas>
-          </div>
-       </div>
-    </div>
-    </div>
-
-
-
-    <!-- Footer -->
-    <footer class="footer sticky py-3 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Project Group 28</p>
-      </div>
-    </footer>
 
   </body>
 
