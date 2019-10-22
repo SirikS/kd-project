@@ -31,29 +31,30 @@ app.config["SESSION_TYPE"] = "filesystem"
 @app.route("/", methods=["GET", "POST"])
 def index():
     """
-    Renders the select ingredients screen
+    Redirects to the fake index page
     """
-    # if request.method == "POST":
-    #     # ga aanbevelingen maken
-    #     results = recommend(False, False)
-    #     # redirect naar de resultaten
-    #     return render_template("results.html", results)
     return redirect(url_for("not_index"))
 
 @app.route("/index", methods=["GET", "POST"])
 def not_index():
-
-    ingredientlist = ['almond', 'amaretto', 'anchovy', 'anise', 'apple', 'apple juice', 'apricot', 'artichoke', 'arugula', 'asian pear', 'asparagus', 'avocado', 'bacon', 'banana', 'barley', 'basil', 'bean', 'beef', 'beef rib', 'beef shank', 'beef tenderloin', 'beer', 'beet', 'bell pepper', 'berry', 'biscuit', 'blackberry', 'blue cheese', 'blueberry', 'bok choy', 'bourbon', 'bran', 'brandy', 'bread', 'breadcrumbs', 'brie', 'brine', 'brisket', 'broccoli', 'broccoli rabe', 'brown rice', 'brussel sprout', 'bulgur', 'butter', 'buttermilk', 'butternut squash', 'butterscotch/caramel', 'cabbage', 'calvados', 'campari', 'cantaloupe', 'capers', 'caraway', 'cardamom', 'carrot', 'cashew', 'cauliflower', 'caviar', 'celery', 'champagne', 'chartreuse', 'cheddar', 'cheese', 'cherry', 'chestnut', 'chicken', 'chickpea', 'chile', 'chile pepper', 'chili', 'chive', 'chocolate', 'cilantro', 'cinnamon', 'citrus', 'clam', 'clove', 'coconut', 'cod', 'coffee', 'cognac/armagnac', 'collard greens', 'coriander', 'corn', 'cornmeal', 'cottage cheese', 'couscous', 'crab', 'cranberry', 'cranberry sauce', 'cream cheese', 'créme de cacao', 'cr��me de cacao', 'cucumber', 'cumin', 'currant', 'curry', 'custard', 'date', 'dill', 'duck', 'egg', 'egg nog', 'eggplant', 'endive', 'escarole', 'fennel', 'feta', 'fig', 'fontina', 'garlic', 'gin', 'ginger', 'goat cheese', 'goose', 'gouda', 'granola', 'grape', 'grapefruit', 'green bean', 'green onion/scallion', 'ground beef', 'ground lamb', 'guava', 'halibut', 'ham', 'hazelnut', 'honey', 'honeydew', 'horseradish', 'hot pepper', 'hummus', 'ice cream', 'iced coffee', 'iced tea', 'jalapeño', 'jam or jelly', 'kale', 'kirsch', 'kiwi', 'kumquat',  'lamb', 'lamb chop', 'lamb shank', 'leek', 'legume', 'lemon', 'lemon juice', 'lemongrass', 'lentil', 'lettuce', 'lima bean', 'lime', 'lime juice', 'lingonberry', 'lobster', 'lychee', 'macadamia nut', 'mandoline', 'mango', 'maple syrup', 'marscarpone', 'marshmallow', 'mayonnaise', 'meatloaf', 'melon', 'milk/cream', 'mint', 'monterey jack', 'mozzarella', 'mushroom', 'mussel', 'mustard', 'mustard greens', 'nectarine', 'nutmeg', 'oat', 'oatmeal', 'octopus', 'okra', 'olive', 'omelet', 'onion', 'orange', 'orange juice', 'oregano', 'orzo', 'oyster', 'papaya', 'paprika', 'parmesan', 'parsley', 'parsnip', 'passion fruit', 'pastry', 'pea', 'peach', 'peanut', 'peanut butter', 'pear', 'pecan', 'pepper', 'persimmon', 'pickles', 'pine nut', 'pineapple', 'pistachio', 'plantain', 'plum', 'poblano', 'pomegranate', 'pomegranate juice', 'poppy', 'pork', 'pork chop', 'pork rib', 'pork tenderloin', 'potato', 'poultry', 'poultry sausage', 'prosciutto', 'prune', 'pumpkin', 'purim', 'quail', 'quince', 'quinoa', 'rabbit', 'rack of lamb', 'radicchio', 'radish', 'raisin', 'raspberry', 'raw', 'red wine', 'rhubarb', 'rice', 'ricotta', 'rosemary', 'rosé', 'rum', 'rutabaga', 'rye', 'saffron', 'sage', 'sake', 'salad dressing', 'salmon', 'salsa', 'sardine', 'sausage', 'sauté', 'scallop', 'scotch', 'seed', 'semolina', 'sesame', 'sesame oil', 'shallot', 'shellfish', 'sherry', 'shrimp', 'snapper', 'sour cream', 'sourdough', 'soy', 'soy sauce', 'sparkling wine', 'spinach', 'squash', 'squid', 'steak', 'steam', 'stock', 'strawberry', 'sugar snap pea', 'sweet potato/yam', 'swiss cheese', 'swordfish', 'tamarind', 'tangerine', 'tapioca', 'tarragon', 'tea', 'thyme', 'tilapia', 'tofu', 'tomatillo', 'tomato', 'tortillas', 'tree nut', 'trout', 'tuna', 'turnip', 'vanilla', 'veal', 'venison', 'vinegar', 'walnut', 'wasabi', 'watercress', 'watermelon', 'whiskey', 'white wine', 'whole wheat', 'wild rice', 'yellow squash', 'yogurt', 'zucchini', 'turkey']
-    appliancelist = ['backyard bbq', 'bake', 'blender', 'boil', 'braise', 'broil', 'coffee grinder', 'deep-fry', 'double boiler', 'food processor', 'epi loves the microwave', 'frozen dessert' , 'freeze/chill', 'freezer food', 'fry', 'grill', 'grill/barbecue', 'ice cream', 'ice cream machine', 'juicer', 'microwave', 'mixer', 'one-pot meal', 'pan-fry', 'pasta maker', 'poach', 'pressure cooker', 'ramekin', 'simmer', 'sorbet',  'soup/stew', 'stir-fry ', 'slow cooker', 'smoker', 'wok']
-
     """
+    Select ingredients and applicances
+    Afterwards calculates the new recipes
     """
+    ingredientlist = ['Fish', 'Shellfish', 'Mollusk', 'Scallop', 'Alcohol', 'Liquids', 'Chartreuse', 'Gin', 'Vegetables', 'Spinach', 'Sweets_and_Candy', 'Creme_de_Cacao', 'Dairy', 'Milk_or_Cream', 'Fruit', 'Grape', 'Grapefruit', 'Sauces_and_Dressings', 'Honey', 'Onion', 'Herbs_and_Spices', 'Seed', 'Legume', 'Soy', 'Spreads', 'Peanut_Butter', 'Nut', 'Tree_Nut', 'Almond', 'Garlic', 'Tomatillo', 'Bell_Pepper', 'Brandy', 'Clove', 'Bean', 'Cheese', 'Crustacean', 'Shrimp', 'Meat', 'Chicken', 'Poultry', 'Egg', 'Lemon', 'Rhubarb', 'Cherry', 'Parsnip', 'Sherry', 'Fruit_Juice', 'Lemon_Juice', 'Apricot', 'Citrus', 'Jam_or_Jelly', 'Eggplant', 'Butter', 'Cinnamon', 'Pickles', 'Raisin', 'Lime', 'Cream_Cheese', 'Beef', 'Coriander', 'Radish', 'Veal', 'Wine', 'Sparkling_Wine', 'Apple', 'Lamb', 'Beet', 'Sausage', 'Bourbon', 'Campari', 'Capers', 'Coffee', 'Mint', 'Bacon', 'Pork', 'Carrot', 'Duck', 'Parmesan', 'Parsley', 'Poppy', 'Leek', 'Oily_Fish', 'Tuna', 'Grain_Products', 'Bread', 'Rosemary', 'Cilantro', 'Sardine', 'Chickpea', 'Tomato', 'Hot_Pepper', 'Jalapeno', 'Monterey_Jack', 'Chile_Pepper', 'Chocolate', 'Clam', 'Crab', 'Mussel', 'Scotch', 'Cabbage', 'Collard_Greens', 'Rutabaga', 'Turnip', 'Berry', 'Cranberry', 'Lime_Juice', 'Plum', 'Ham', 'Sweet_Potato', 'Rice', 'Pepper', 'Cucumber', 'Egg_Nog', 'Cognac', 'Watercress', 'Plantain', 'Avocado', 'Paprika', 'Raspberry', 'Semolina', 'Lettuce', 'Sake', 'Cod', 'Whitefish', 'Ginger', 'Tortilla', 'Celery', 'Poblano', 'Lentil', 'Rye', 'Caraway', 'Cumin', 'Date', 'Fig', 'Passion_Fruit', 'Buttermilk', 'Kirsch', 'Whiskey', 'Breadcrumbs', 'Dill', 'Mayonnaise', 'Shallot', 'Sugar_Snap_Pea', 'Hazelnut', 'Currant', 'Beer', 'Blackberry', 'Orange', 'Champagne', 'Kale', 'Pine_Nut', 'Melon', 'Mushroom', 'Orzo', 'Pasta', 'Pastry', 'Squash', 'Basil', 'Corn', 'Brisket', 'Ricotta', 'Pear', 'Pineapple', 'Saffron', 'Vanilla', 'Maple_Syrup', 'Salad_Dressing', 'Lima_Bean', 'Mustard', 'Sesame_Oil', 'Amaretto', 'Anchovy', 'Anise', 'Artichoke', 'Aragula', 'Asparagus', 'Banana', 'Barley', 'Biscuit', 'Blueberry', 'Bran', 'Brie', 'Brine', 'Broccoli', 'Bulgur', 'Wheat', 'Calvados', 'Cantaloupe', 'Cardamom', 'Cashew', 'Cauliflower', 'Caviar', 'Cheddar', 'Chestnut', 'Chili', 'Chive', 'Coconut', 'Couscous', 'Custard', 'Endive', 'Escarole', 'Fennel', 'Feta', 'Fontina', 'Goose', 'Gouda', 'Kumquat', 'Guava', 'Halibut', 'Honeydew', 'Horseradish', 'Hummus', 'Kiwi', 'Lemongrass', 'Lingonberry', 'Lobster', 'Lychee', 'Mango', 'Marscarpone', 'Marshmellow', 'Meatloaf', 'Mozzerella', 'Nectarine', 'Nutmeg', 'Oat', 'Octopus', 'Okra', 'Olive', 'Oregano', 'Oyster', 'Papaya', 'Pea', 'Peach', 'Peanut', 'Pecan', 'Persimmon', 'Pistachio', 'Pomegranate', 'Potato', 'Prune', 'Quail', 'Quince', 'Quinoa', 'Rabbit', 'Radicchio', 'Rum', 'Sage', 'Salmon', 'Salsa', 'Sesame', 'Snapper', 'Sourdough', 'Squid', 'Stock', 'Strawberry', 'Swordfish', 'Tamarind', 'Tangerine', 'Tapioca', 'Tarragon', 'Tea', 'Thyme', 'Tilapia', 'Tofu', 'Trout', 'Venison', 'Vinegar', 'Walnut', 'Wasabi', 'Yogurt', 'Zucchini', 'Green_Bean', 'Blue_Cheese', 'Goat_Cheese', 'Mustard_Greens', 'Brussel_Sprout', 'Broccoli_Rabe', 'Green_Onion', 'Asian_Pear', 'Bok_Choy', 'Apple_Juice', 'Cranberry_Sauce', 'Orange_Juice', 'Iced_Tea', 'Pomegranate_Juice', 'Macadamia_Nut', 'White_Wine', 'Swiss_Cheese', 'Red_Wine', 'Butterscotch_Caramel', 'Ice_Cream', 'Cottage_Cheese', 'Soy_Sauce', 'Sour_Cream', 'Rose', 'Iced_Coffee', 'Whole_Wheat']
+    appliancelist = ['oven', 'pasta_maker', 'mixer', 'food_processor', 'stove', 'grill', 'deep-fryer', 'blender', 'freezer', 'pressure_cooker','juicer', 'microwave', 'smoker', 'ice cream machine', 'slow cooker', 'coffee grinder']
+
     if request.method == "POST":
-        print(request.form)
-        # ga aanbevelingen maken
-        results = recommend(False, False)
-        # redirect naar de resultaten
-        return render_template("results.html", results)
+        dictionary = request.form.values()
+        for lijst in dictionary:
+            if lijst in appliancelist:
+                appliancelist.remove(lijst)
+            if lijst in ingredientlist:
+                ingredientlist.remove(lijst)
+        print(appliancelist)
+        print(ingredientlist)
+        return render_template("results.html", recommend(ingredientlist, appliancelist))
+
     return render_template("index.html")
 
 @app.route("/results")
