@@ -33,7 +33,19 @@ def index():
     """
     Renders the select ingredients screen
     """
+    # if request.method == "POST":
+    #     # ga aanbevelingen maken
+    #     results = recommend(False, False)
+    #     # redirect naar de resultaten
+    #     return render_template("results.html", results)
+    return redirect(url_for("not_index"))
+
+@app.route("/index", methods=["GET", "POST"])
+def not_index():
+    """
+    """
     if request.method == "POST":
+        print(request.form)
         # ga aanbevelingen maken
         results = recommend(False, False)
         # redirect naar de resultaten
@@ -69,9 +81,8 @@ def recommend(ingredienten, nietappliance):
     if not ingredienten:
         ingredienten = ['Chicken', 'Carrot']
     for ingredient in range(len(ingredienten)):
-        begin += """?recipe rp:hasIngredient ?ingredient{}.
-        # State which category the ingredient belongs to 
-        ?ingredient{} rdf:type rp:{}.
+        begin += """FILTER NOT EXISTS {?recipe rp:hasIngredient ?ingredient%i.
+        ?ingredient%i rdf:type rp:%s.}
         """.format(ingredient, ingredient, ingredienten[ingredient])
 
     if not nietappliance:
