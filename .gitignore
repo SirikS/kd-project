@@ -1,2 +1,5 @@
 # Ignore the pycache
 __pycache__/
+
+# ignore html results
+templates/results.html
