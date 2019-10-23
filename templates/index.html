@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html ng-App="KRRclass" lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>What's in my kitchen?</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href= {{ url_for('static', filename = 'css-custom.css') }} rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+  <div class="container">
+  <h2>What ingredients do you have?</h2>
+    <form action="{{ url_for('not_index') }}" method="post">
+      <div id="accordion" role="tablist">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Dairy
+              </a>
+            </h5>
+          </div>
+              
+                  <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      <input type="checkbox" name="dairy1" value="Butter"> Butter<br>
+                      <input type="checkbox" name="dairy2" value="Cheese"> Cheese<br>
+                      <input type="checkbox" name="dairy3" value="Custard"> Custard<br>
+                      <input type="checkbox" name="dairy4" value="Ice_Cream"> Ice Cream<br>
+                      <input type="checkbox" name="dairy5" value="Milk_or_Cream"> Milk or Cream<br>
+                      <input type="checkbox" name="dairy6" value="Sour_Cream"> Sour Cream<br>
+                      <input type="checkbox" name="dairy7" value="Yogurt"> Yoghurt<br>
+                      <input type="checkbox" name="dairy8" value="Egg"> Eggs<br>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingTwo">
+                    <h5 class="mb-0">
+                      <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Fish
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      <input type="checkbox" name="fish1" value="Caviar"> Caviar<br>
+                      <input type="checkbox" name="fish2" value="Oily_Fish"> Oily Fish<br>
+                      <input type="checkbox" name="fish3" value="Shellfish"> Shellfish<br>
+                      <input type="checkbox" name="fish4" value="Whitefish"> Whitefish<br>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" role="tab" id="headingThree">
+                    <h5 class="mb-0">
+                      <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Fruit
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                      <input type="checkbox" name="fruit1" value="Apple"> Apple<br>
+                      <input type="checkbox" name="fruit2" value="Apricot"> Apricot<br>
+                      <input type="checkbox" name="fruit3" value="Avocado"> Avocado<br>
+                      <input type="checkbox" name="fruit4" value="Banana"> Banana<br>
+                      <input type="checkbox" name="fruit5" value="Berry"> Berry<br>
+                      <input type="checkbox" name="fruit6" value="Cantaloupe"> Cantaloupe<br>
+                      <input type="checkbox" name="fruit7" value="Cherry"> Cherry<br>
+                      <input type="checkbox" name="fruit8" value="Citrus"> Citrus<br>
+                      <input type="checkbox" name="fruit9" value="Coconut"> Coconut<br>
+                      <input type="checkbox" name="fruit10" value="Date"> Date<br>
+                      <input type="checkbox" name="fruit11" value="Fig"> Fig<br>
+                      <input type="checkbox" name="fruit12" value="Grape"> Grape<br>
+                      <input type="checkbox" name="fruit13" value="Grapefruit"> Grapefruit<br>
+                      <input type="checkbox" name="fruit14" value="Guava"> Guava<br>
+                      <input type="checkbox" name="fruit15" value="Kiwi"> Kiwi<br>
+                      <input type="checkbox" name="fruit16" value="Kumquat"> Kumquat<br>
+                      <input type="checkbox" name="fruit17" value="Lemon"> Lemon<br>
+                      <input type="checkbox" name="fruit18" value="Lime"> Lime<br>
+                      <input type="checkbox" name="fruit19" value="Lychee"> Lychee<br>
+                      <input type="checkbox" name="fruit20" value="Mango"> Mango<br>
+                      <input type="checkbox" name="fruit21" value="Melon"> Melon<br>
+                      <input type="checkbox" name="fruit22" value="Nectarine"> Nectarine<br>
+                      <input type="checkbox" name="fruit23" value="Olive"> Olive<br>
+                      <input type="checkbox" name="fruit24" value="Orange"> Orange<br>
+                      <input type="checkbox" name="fruit25" value="Papaya"> Papaya<br>
+                      <input type="checkbox" name="fruit26" value="Passion_Fruit"> Passion Fruit<br>
+                      <input type="checkbox" name="fruit27" value="Peach"> Peach<br>
+                      <input type="checkbox" name="fruit28" value="Pear"> Pear<br>
+                      <input type="checkbox" name="fruit29" value="Persimmon"> Persimmon<br>
+                      <input type="checkbox" name="fruit30" value="Pineapple"> Pineapple<br>
+                      <input type="checkbox" name="fruit31" value="Plantain"> Plantain<br>
+                      <input type="checkbox" name="fruit32" value="Plum"> Plum<br>
+                      <input type="checkbox" name="fruit33" value="Pomegranate"> Pomegranate<br>
+                      <input type="checkbox" name="fruit34" value="Prune"> Prune<br>
+                      <input type="checkbox" name="fruit35" value="Quince"> Quince<br>
+                      <input type="checkbox" name="fruit36" value="Raisin"> Raisin<br>
+                      <input type="checkbox" name="fruit37" value="Tangerine"> Tangerine<br>
+                      <input type="checkbox" name="fruit38" value="Tomato"> Tomato<br>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingFour">
+                      <h5 class="mb-0">
+                        <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Grain Products
+                        </a>
+                      </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                      <div class="card-body">
+                        <input type="checkbox" name="grain_products1" value="Barley"> Barley<br>
+                        <input type="checkbox" name="grain_products2" value="Biscuit"> Biscuit<br>
+                        <input type="checkbox" name="grain_products3" value="Bran"> Bran<br>
+                        <input type="checkbox" name="grain_products4" value="Bread"> Bread<br>
+                        <input type="checkbox" name="grain_products5" value="Corn"> Corn<br>
+                        <input type="checkbox" name="grain_products6" value="Oat"> Oat<br>
+                        <input type="checkbox" name="grain_products7" value="Pasta"> Pasta<br>
+                        <input type="checkbox" name="grain_products8" value="Pastry"> Pastry<br>
+                        <input type="checkbox" name="grain_products9" value="Quinoa"> Quinoa<br>
+                        <input type="checkbox" name="grain_products10" value="Rice"> Rice<br>
+                        <input type="checkbox" name="grain_products11" value="Rye"> Rye<br>
+                        <input type="checkbox" name="grain_products12" value="Semolina"> Semolina<br>
+                        <input type="checkbox" name="grain_products13" value="Tapioca"> Tapioca<br>
+                        <input type="checkbox" name="grain_products14" value="Tortilla"> Tortilla<br>
+                        <input type="checkbox" name="grain_products15" value="Wheat"> Wheat<br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                      <div class="card-header" role="tab" id="headingFive">
+                        <h5 class="mb-0">
+                          <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Herbs and Spices
+                          </a>
+                        </h5>
+                      </div>
+                      <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                          <input type="checkbox" name="herbs_and_spices1" value="Anise"> Anise<br>
+                          <input type="checkbox" name="herbs_and_spices2" value="Basil"> Basil<br>
+                          <input type="checkbox" name="herbs_and_spices3" value="Capers"> Capers<br>
+                          <input type="checkbox" name="herbs_and_spices4" value="Caraway"> Caraway<br>
+                          <input type="checkbox" name="herbs_and_spices5" value="Cardamom"> Cardamom<br>
+                          <input type="checkbox" name="herbs_and_spices6" value="Chive"> Chive<br>
+                          <input type="checkbox" name="herbs_and_spices7" value="Cilantro"> Cilantro<br>
+                          <input type="checkbox" name="herbs_and_spices8" value="Cinnamon"> Cinnamon<br>
+                          <input type="checkbox" name="herbs_and_spices9" value="Clove"> Clove<br>
+                          <input type="checkbox" name="herbs_and_spices10" value="Coriander"> Coriander<br>
+                          <input type="checkbox" name="herbs_and_spices12" value="Cumin"> Cumin<br>
+                          <input type="checkbox" name="herbs_and_spices13" value="Currant"> Currant<br>
+                          <input type="checkbox" name="herbs_and_spices14" value="Dill"> Dill<br>
+                          <input type="checkbox" name="herbs_and_spices15" value="Ginger"> Ginger<br>
+                          <input type="checkbox" name="herbs_and_spices16" value="Lemongrass"> Lemongrass<br>
+                          <input type="checkbox" name="herbs_and_spices17" value="Mint"> Mint<br>
+                          <input type="checkbox" name="herbs_and_spices18" value="Nutmeg"> Nutmeg<br>
+                          <input type="checkbox" name="herbs_and_spices19" value="Oregano"> Oregano<br>
+                          <input type="checkbox" name="herbs_and_spices20" value="Parsley"> Parsley<br>
+                          <input type="checkbox" name="herbs_and_spices21" value="Pepper"> Pepper<br>
+                          <input type="checkbox" name="herbs_and_spices22" value="Poppy"> Poppy<br>
+                          <input type="checkbox" name="herbs_and_spices23" value="Rosemary"> Rosemary<br>
+                          <input type="checkbox" name="herbs_and_spices24" value="Saffron"> Saffron<br>
+                          <input type="checkbox" name="herbs_and_spices25" value="Sage"> Sage<br>
+                          <input type="checkbox" name="herbs_and_spices26" value="Seed"> Seed<br>
+                          <input type="checkbox" name="herbs_and_spices27" value="Sesame"> Sesame<br>
+                          <input type="checkbox" name="herbs_and_spices28" value="Tamarind"> Tamarind<br>
+                          <input type="checkbox" name="herbs_and_spices29" value="Tarragon"> Tarragon<br>
+                          <input type="checkbox" name="herbs_and_spices30" value="Thyme"> Thyme<br>
+                          <input type="checkbox" name="herbs_and_spices31" value="Vanilla"> Vanilla<br>
+                          <input type="checkbox" name="herbs_and_spices32" value="Wasabi"> Wasabi<br>
+                      </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingSix">
+                          <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                              Liquids
+                            </a>
+                          </h5>
+                        </div>
+                        <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#accordion">
+                          <div class="card-body">
+                            <input type="checkbox" name="liquids1" value="Alcohol"> Alcohol<br>
+                            <input type="checkbox" name="liquids2" value="Brine"> Brine<br>
+                            <input type="checkbox" name="liquids3" value="Coffee"> Coffee<br>
+                            <input type="checkbox" name="liquids4" value="Fruit_Juice"> Fruit Juice<br>
+                            <input type="checkbox" name="liquids5" value="Maple_Syrup"> Maple Syrup<br>
+                            <input type="checkbox" name="liquids6" value="Sesame_Oil"> Sesame Oil<br>
+                            <input type="checkbox" name="liquids7" value="Stock"> Stock<br>
+                            <input type="checkbox" name="liquids8" value="Tea"> Tea<br>
+                            <input type="checkbox" name="liquids9" value="Vinegar"> Vinegar<br>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" role="tab" id="headingSeven">
+                            <h5 class="mb-0">
+                              <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Meat
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" data-parent="#accordion">
+                            <div class="card-body">
+                              <input type="checkbox" name="meat1" value="Beef"> Beef<br>
+                              <input type="checkbox" name="meat2" value="Lamb"> Lamb<br>
+                              <input type="checkbox" name="meat3" value="Meatloaf"> Meatloaf<br>
+                              <input type="checkbox" name="meat4" value="Pork"> Pork<br>
+                              <input type="checkbox" name="meat5" value="Poultry"> Poultry<br>
+                              <input type="checkbox" name="meat6" value="Rabbit"> Rabbit<br>
+                              <input type="checkbox" name="meat7" value="Sausage"> Sausage<br>
+                              <input type="checkbox" name="meat8" value="Tofu"> Tofu<br>
+                              <input type="checkbox" name="meat9" value="Venison"> Vension<br>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingEight">
+                              <h5 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                  Nut
+                                </a>
+                              </h5>
+                            </div>
+                            <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight" data-parent="#accordion">
+                              <div class="card-body">
+                                <input type="checkbox" name="nut1" value="Almond"> Almond<br>
+                                <input type="checkbox" name="nut2" value="Cashew"> Cashew<br>
+                                <input type="checkbox" name="nut3" value="Chestnut"> Chestnut<br>
+                                <input type="checkbox" name="nut4" value="Hazelnut"> Hazelnut<br>
+                                <input type="checkbox" name="nut5" value="Macadamia_Nut"> Macadamia Nut<br>
+                                <input type="checkbox" name="nut6" value="Peanut"> Peanut<br>
+                                <input type="checkbox" name="nut7" value="Pecan"> Pecan<br>
+                                <input type="checkbox" name="nut8" value="Pine_Nut"> Pine Nut<br>
+                                <input type="checkbox" name="nut9" value="Pistachio"> Pistachio<br>
+                                <input type="checkbox" name="nut10" value="Tree_Nut"> Tree Nut<br>
+                                <input type="checkbox" name="nut11" value="Walnut"> Walnut<br>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                              <div class="card-header" role="tab" id="headingNine">
+                                <h5 class="mb-0">
+                                  <a class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    Sauces and Dressings
+                                  </a>
+                                </h5>
+                              </div>
+                              <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine" data-parent="#accordion">
+                                <div class="card-body">
+                                  <input type="checkbox" name="sauces_and_dressings1" value="Cranberry_Sauce"> Cranberry Sauce<br>
+                                  <input type="checkbox" name="sauces_and_dressings2" value="Honey"> Honey<br>
+                                  <input type="checkbox" name="sauces_and_dressings3" value="Ketchup"> Ketchup<br>
+                                  <input type="checkbox" name="sauces_and_dressings4" value="Mayonnaise"> Mayonnaise<br>
+                                  <input type="checkbox" name="sauces_and_dressings5" value="Mustard"> Mustard<br>
+                                  <input type="checkbox" name="sauces_and_dressings6" value="Salad_Dressing"> Salad Dressing<br>
+                                  <input type="checkbox" name="sauces_and_dressings7" value="Salsa"> Salsa<br>
+                                  <input type="checkbox" name="sauces_and_dressings8" value="Soy_Sauce"> Soy Sauce<br>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingTen">
+                                  <h5 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                      Spreads
+                                    </a>
+                                  </h5>
+                                </div>
+                                <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" data-parent="#accordion">
+                                  <div class="card-body">
+                                    <input type="checkbox" name="spreads1" value="Hummus"> Hummus<br>
+                                    <input type="checkbox" name="spreads2" value="Jam_or_Jelly"> Jam or Jelly<br>
+                                    <input type="checkbox" name="spreads3" value="Peanut_Butter"> Peanut Butter<br>
+                                    <input type="checkbox" name="spreads4" value="Pesto"> Pesto<br>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card">
+                                  <div class="card-header" role="tab" id="headingEleven">
+                                    <h5 class="mb-0">
+                                      <a class="collapsed" data-toggle="collapse" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                                        Sweets and Candy
+                                      </a>
+                                    </h5>
+                                  </div>
+                                  <div id="collapseEleven" class="collapse" role="tabpanel" aria-labelledby="headingEleven" data-parent="#accordion">
+                                    <div class="card-body">
+                                      <input type="checkbox" name="sweets_and_candy1" value="Butterscotch_Caramel"> Butterscotch Caramel<br>
+                                      <input type="checkbox" name="sweets_and_candy2" value="Chocolate"> Chocolate<br>
+                                      <input type="checkbox" name="sweets_and_candy3" value="Creme_de_Cacao"> Creme de Cacao<br>
+                                      <input type="checkbox" name="sweets_and_candy4" value="Marshmellow"> Marshmellow<br>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingTwelve">
+                                      <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                                          Vegetables
+                                        </a>
+                                      </h5>
+                                    </div>
+                                    <div id="collapseTwelve" class="collapse" role="tabpanel" aria-labelledby="headingTwelve" data-parent="#accordion">
+                                      <div class="card-body">
+                                        <input type="checkbox" name="vegetables1" value="Aragula"> Aragula<br>
+                                        <input type="checkbox" name="vegetables2" value="Artichoke"> Artichoke<br>
+                                        <input type="checkbox" name="vegetables3" value="Asparagus"> Asparagus<br>
+                                        <input type="checkbox" name="vegetables4" value="Beet"> Beet<br>
+                                        <input type="checkbox" name="vegetables5" value="Bell_Pepper"> Bell Pepper<br>
+                                        <input type="checkbox" name="vegetables6" value="Bok_Choy"> Bok Choy<br>
+                                        <input type="checkbox" name="vegetables7" value="Broccoli"> Broccoli<br>
+                                        <input type="checkbox" name="vegetables8" value="Broccoli_Rabe"> Broccoli Rabe<br>
+                                        <input type="checkbox" name="vegetables9" value="Brussel_Sprout"> Brussel Sprout<br>
+                                        <input type="checkbox" name="vegetables10" value="Cabbage"> Cabbage<br>
+                                        <input type="checkbox" name="vegetables11" value="Carrot"> Carrot<br>
+                                        <input type="checkbox" name="vegetables12" value="Cauliflower"> Cauliflower<br>
+                                        <input type="checkbox" name="vegetables13" value="Celery"> Celery<br>
+                                        <input type="checkbox" name="vegetables14" value="Collard_Greens"> Collard Greens<br>
+                                        <input type="checkbox" name="vegetables15" value="Cucumber"> Cucumber<br>
+                                        <input type="checkbox" name="vegetables16" value="Eggplant"> Eggplant<br>
+                                        <input type="checkbox" name="vegetables17" value="Endive"> Endive<br>
+                                        <input type="checkbox" name="vegetables18" value="Escarole"> Escarole<br>
+                                        <input type="checkbox" name="vegetables19" value="Fennel"> Fennel<br>
+                                        <input type="checkbox" name="vegetables20" value="Garlic"> Garlic<br>
+                                        <input type="checkbox" name="vegetables21" value="Horseradish"> Horseradish<br>
+                                        <input type="checkbox" name="vegetables22" value="Hot_Pepper"> Hot Pepper<br>
+                                        <input type="checkbox" name="vegetables23" value="Kale"> Kale<br>
+                                        <input type="checkbox" name="vegetables24" value="Leek"> Leek<br>
+                                        <input type="checkbox" name="vegetables25" value="Legume"> Legume<br>
+                                        <input type="checkbox" name="vegetables26" value="Lettuce"> Lettuce<br>
+                                        <input type="checkbox" name="vegetables27" value="Mushroom"> Mushroom<br>
+                                        <input type="checkbox" name="vegetables28" value="Mustard_Greens"> Mustard Greens<br>
+                                        <input type="checkbox" name="vegetables29" value="Okra"> Okra<br>
+                                        <input type="checkbox" name="vegetables30" value="Onion"> Onion<br>
+                                        <input type="checkbox" name="vegetables31" value="Paprika"> Paprika<br>
+                                        <input type="checkbox" name="vegetables32" value="Parsnip"> Parsnip<br>
+                                        <input type="checkbox" name="vegetables33" value="Pickles"> Pickles<br>
+                                        <input type="checkbox" name="vegetables34" value="Potato"> Potato<br>
+                                        <input type="checkbox" name="vegetables35" value="Radicchio"> Radicchio<br>
+                                        <input type="checkbox" name="vegetables36" value="Radish"> Radish<br>
+                                        <input type="checkbox" name="vegetables37" value="Rhubarb"> Rhubarb<br>
+                                        <input type="checkbox" name="vegetables38" value="Spinach"> Spinach<br>
+                                        <input type="checkbox" name="vegetables39" value="Squash"> Squash<br>
+                                        <input type="checkbox" name="vegetables40" value="Sweet_Potato"> Sweet Potato<br>
+                                        <input type="checkbox" name="vegetables41" value="Tomatillo"> Tomatillo<br>
+                                        <input type="checkbox" name="vegetables42" value="Turnip"> Turnip<br>
+                                        <input type="checkbox" name="vegetables43" value="Watercress"> Watercress<br>
+                                        <input type="checkbox" name="vegetables44" value="Zucchini"> Zucchini<br>
+                                      </div>
+                                    </div>
+                                  </div>
+              </div>
+            <h2>What appliances do you have?</h2>
+              <input type="checkbox" name="appliance1" checked="checked" value="blender"> Blender<br>
+              <input type="checkbox" name="appliance2" checked="checked" value="coffee_grinder"> Coffee Grinder<br>
+              <input type="checkbox" name="appliance3" checked="checked" value="deep-fryer"> Deep Fryer<br>
+              <input type="checkbox" name="appliance4" checked="checked" value="food_processor"> Food Processor<br>
+              <input type="checkbox" name="appliance5" checked="checked" value="freezer"> Freezer<br>
+              <input type="checkbox" name="appliance6" checked="checked" value="grill"> Grill<br>
+              <input type="checkbox" name="appliance7" checked="checked" value="ice_cream_machine"> Ice Cream Machine<br>
+              <input type="checkbox" name="appliance8" checked="checked" value="juicer"> Juicer<br>
+              <input type="checkbox" name="appliance9" checked="checked" value="microwave"> Microwave<br>
+              <input type="checkbox" name="appliance10" checked="checked" value="mixer"> Mixer<br>
+              <input type="checkbox" name="appliance11" checked="checked" value="oven"> Oven<br>
+              <input type="checkbox" name="appliance12" checked="checked" value="pasta_maker"> Pasta Maker<br>
+              <input type="checkbox" name="appliance13" checked="checked" value="pressure_cooker"> Pressure Cooker<br>
+              <input type="checkbox" name="appliance14" checked="checked" value="slow_cooker"> Slow Cooker<br>
+              <input type="checkbox" name="appliance15" checked="checked" value="smoker"> Smoker<br>
+              <input type="checkbox" name="appliance16" checked="checked" value="stove"> Stove<br>
+
+              <input type="submit" value="submit">
+            </form>
+          </div>
+
+  </body>
+
+</html>

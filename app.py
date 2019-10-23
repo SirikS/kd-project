@@ -91,8 +91,9 @@ def recommend(ingredienten, nietappliance):
                     rp:hasDescription ?description;
                     rp:hasLinkTitle ?linktitle.}
     } ORDER BY DESC(?link)"""
-    print(begin)
 
+    # display the query in terminal
+    print(begin)
 
     # fill in your own reposity here
     sparql = SPARQLWrapper("http://localhost:7200/repositories/project")
