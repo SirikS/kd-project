@@ -19,19 +19,20 @@
 
   </head>
 
-  <body>
-  <div class="container">
-  <h2>What ingredients do you have?</h2>
-    <form action="{{ url_for('not_index') }}" method="post">
-      <div id="accordion" role="tablist">
-        <div class="card">
-          <div class="card-header" role="tab" id="headingOne">
-            <h5 class="mb-0">
-              <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Dairy
-              </a>
-            </h5>
-          </div>
+  <body class="body">
+  <div class="container-outer">
+    <div class="container-inner">
+      <h2>What ingredients do you have?</h2>
+        <form action="{{ url_for('not_index') }}" method="post">
+          <div id="accordion" role="tablist">
+            <div class="card">
+              <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Dairy
+                  </a>
+                </h5>
+              </div>
               
                   <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
@@ -387,7 +388,7 @@
               <input type="submit" value="submit">
             </form>
           </div>
-
+        </div>
   </body>
 
 </html>

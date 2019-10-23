@@ -16,3 +16,23 @@
 .my-card:hover {
 	border-color: #f58723;
 }
+
+.body {
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+}
+
+.container-outer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+    background: transparent;
+}
+
+.container-inner {
+    padding: 72px 15px 65px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
