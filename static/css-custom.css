@@ -32,13 +32,14 @@
 }
 
 .container-inner {
-    padding: 72px 15px 65px 15px;
+    padding: 40px 15px 40px 15px;
     border-radius: 10px;
     overflow: hidden;
     background: white;
 }
 
 .title {
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -69,4 +70,17 @@
     color: #fff;
     line-height: 1.2;
     font-weight: 600;
+}
+
+.h5-left {
+    float: left;
+}
+
+.h5-right {
+    float: right;
+    color: #00dbde;
+}
+
+.card {
+    margin-bottom: 5px;
 }

@@ -25,12 +25,13 @@
       <h2 class="title">What ingredients do you have?</h2>
         <form action="{{ url_for('not_index') }}" method="post">
           <div id="accordion" role="tablist">
-            <div class="card">
-              <div class="card-header" role="tab" id="headingOne">
-                <h5 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <div class="card">
+              <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" role="tab" id="headingOne">
+                <h5 class="mb-0 h5-left">
                     Dairy
-                  </a>
+                </h5>
+                <h5 class="mb-0 h5-right">
+                  +
                 </h5>
               </div>
               
@@ -48,11 +49,12 @@
                   </div>
                 </div>
                 <div class="card">
-                  <div class="card-header" role="tab" id="headingTwo">
-                    <h5 class="mb-0">
-                      <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <div class="card-header collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="tab" id="headingTwo">
+                    <h5 class="mb-0 h5-left">
                         Fish
-                      </a>
+                    </h5>
+                    <h5 class="mb-0 h5-right">
+                        +
                     </h5>
                   </div>
                   <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -65,11 +67,12 @@
                   </div>
                 </div>
                 <div class="card">
-                  <div class="card-header" role="tab" id="headingThree">
-                    <h5 class="mb-0">
-                      <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <div class="card-header collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="tab" id="headingThree">
+                    <h5 class="mb-0 h5-left">
                         Fruit
-                      </a>
+                    </h5>
+                    <h5 class="mb-0 h5-right">
+                        +
                     </h5>
                   </div>
                   <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
@@ -116,11 +119,12 @@
                   </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" role="tab" id="headingFour">
-                      <h5 class="mb-0">
-                        <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="card-header collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" role="tab" id="headingFour">
+                      <h5 class="mb-0 h5-left">
                           Grain Products
-                        </a>
+                      </h5>
+                      <h5 class="mb-0 h5-right">
+                          +
                       </h5>
                     </div>
                     <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
@@ -144,11 +148,12 @@
                     </div>
                   </div>
                   <div class="card">
-                      <div class="card-header" role="tab" id="headingFive">
-                        <h5 class="mb-0">
-                          <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      <div class="card-header collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" role="tab" id="headingFive">
+                        <h5 class="mb-0 h5-left">
                             Herbs and Spices
-                          </a>
+                        </h5>
+                        <h5 class="mb-0 h5-right">
+                            +
                         </h5>
                       </div>
                       <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
@@ -186,12 +191,14 @@
                           <input type="checkbox" name="herbs_and_spices32" value="Wasabi"> Wasabi<br>
                       </div>
                     </div>
+                  </div>
                     <div class="card">
-                        <div class="card-header" role="tab" id="headingSix">
-                          <h5 class="mb-0">
-                            <a class="collapsed" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <div class="card-header collapsed" data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" role="tab" id="headingSix">
+                          <h5 class="mb-0 h5-left">
                               Liquids
-                            </a>
+                          </h5>
+                          <h5 class="mb-0 h5-right">
+                              +
                           </h5>
                         </div>
                         <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#accordion">
@@ -209,11 +216,12 @@
                         </div>
                       </div>
                       <div class="card">
-                          <div class="card-header" role="tab" id="headingSeven">
-                            <h5 class="mb-0">
-                              <a class="collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                          <div class="card-header collapsed" data-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" role="tab" id="headingSeven">
+                            <h5 class="mb-0 h5-left">
                                 Meat
-                              </a>
+                            </h5>
+                            <h5 class="mb-0 h5-right">
+                                +
                             </h5>
                           </div>
                           <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" data-parent="#accordion">
@@ -231,11 +239,12 @@
                           </div>
                         </div>
                         <div class="card">
-                            <div class="card-header" role="tab" id="headingEight">
-                              <h5 class="mb-0">
-                                <a class="collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            <div class="card-header collapsed" data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight" role="tab" id="headingEight">
+                              <h5 class="mb-0 h5-left">
                                   Nut
-                                </a>
+                              </h5>
+                              <h5 class="mb-0 h5-right">
+                                  +
                               </h5>
                             </div>
                             <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight" data-parent="#accordion">
@@ -255,11 +264,12 @@
                             </div>
                           </div>
                           <div class="card">
-                              <div class="card-header" role="tab" id="headingNine">
-                                <h5 class="mb-0">
-                                  <a class="collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                              <div class="card-header collapsed" data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine" role="tab" id="headingNine">
+                                <h5 class="mb-0 h5-left">
                                     Sauces and Dressings
-                                  </a>
+                                </h5>
+                                <h5 class="mb-0 h5-right">
+                                    +
                                 </h5>
                               </div>
                               <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine" data-parent="#accordion">
@@ -276,11 +286,12 @@
                               </div>
                             </div>
                             <div class="card">
-                                <div class="card-header" role="tab" id="headingTen">
-                                  <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                <div class="card-header collapsed" data-toggle="collapse" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen" role="tab" id="headingTen">
+                                  <h5 class="mb-0 h5-left">
                                       Spreads
-                                    </a>
+                                  </h5>
+                                  <h5 class="mb-0 h5-right">
+                                      +
                                   </h5>
                                 </div>
                                 <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" data-parent="#accordion">
@@ -293,11 +304,12 @@
                                 </div>
                               </div>
                               <div class="card">
-                                  <div class="card-header" role="tab" id="headingEleven">
-                                    <h5 class="mb-0">
-                                      <a class="collapsed" data-toggle="collapse" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                                  <div class="card-header collapsed" data-toggle="collapse" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven" role="tab" id="headingEleven">
+                                    <h5 class="mb-0 h5-left">
                                         Sweets and Candy
-                                      </a>
+                                    </h5>
+                                    <h5 class="mb-0 h5-right">
+                                        +
                                     </h5>
                                   </div>
                                   <div id="collapseEleven" class="collapse" role="tabpanel" aria-labelledby="headingEleven" data-parent="#accordion">
@@ -310,11 +322,12 @@
                                   </div>
                                 </div>
                                 <div class="card">
-                                    <div class="card-header" role="tab" id="headingTwelve">
-                                      <h5 class="mb-0">
-                                        <a class="collapsed" data-toggle="collapse" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                                    <div class="card-header collapsed" data-toggle="collapse" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve" role="tab" id="headingTwelve">
+                                      <h5 class="mb-0 h5-left">
                                           Vegetables
-                                        </a>
+                                      </h5>
+                                      <h5 class="mb-0 h5-right">
+                                          +
                                       </h5>
                                     </div>
                                     <div id="collapseTwelve" class="collapse" role="tabpanel" aria-labelledby="headingTwelve" data-parent="#accordion">
