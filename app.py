@@ -68,29 +68,28 @@ def recommend(ingredienten, nietappliance):
 
     # make the query
     begin = """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rp: <http://www.groepsproject.com/recipes/>
-    SELECT DISTINCT ?title ?link ?linktitle ?description
-    WHERE {
-        ?recipe rdf:type rp:Recipe.
-        """
+PREFIX rp: <http://www.groepsproject.com/recipes/>
+SELECT DISTINCT ?title ?link ?linktitle ?description
+WHERE {
+    ?recipe rdf:type rp:Recipe.
+    """
     # remove the recipes with other ingredients
     for ingredient in range(len(ingredienten)):
         begin += """FILTER NOT EXISTS {?recipe rp:hasIngredient ?ingredient%i.
-        ?ingredient%i rdf:type rp:%s}
-        """ % (ingredient, ingredient, ingredienten[ingredient])
+    ?ingredient%i rdf:type rp:%s}
+    """ % (ingredient, ingredient, ingredienten[ingredient])
 
     # remove the recipes for which you don't have the appliance
     for appliance in nietappliance:
         begin += """FILTER NOT EXISTS {?recipe rp:needsAppliance rp:%s}
-        """ % appliance
+    """ % appliance
 
     # get the recipes data
-    begin += """?recipe rp:hasTitle ?title.
-        OPTIONAL{
-            ?recipe rp:hasLink ?link;
-                    rp:hasDescription ?description;
-                    rp:hasLinkTitle ?linktitle.}
-    } ORDER BY DESC(?link)"""
+    begin += """?recipe rp:hasTitle ?title;
+        rp:hasLink ?link;
+        rp:hasDescription ?description;
+        rp:hasLinkTitle ?linktitle.
+} ORDER BY DESC(?link)"""
 
     # display the query in terminal
     print(begin)
