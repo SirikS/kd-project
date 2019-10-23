@@ -56,7 +56,7 @@ def not_index():
 
         # make the recommendations, and return these
         if recommend(ingredientlist, appliancelist):
-            return render_template("test.html")
+            return render_template("results.html")
 
     # make the user fill in the form
     return render_template("index.html")
@@ -116,4 +116,12 @@ def recommend(ingredienten, nietappliance):
             item.append(row.get(c, {}).get('value'))
         out.append(item)
     pd.DataFrame(out, columns=cols).to_html("templates/test.html")
+    with open("templates/test.html", "r") as f1, open("templates/results.html", "w") as f2:
+        f2.write("""<head>
+    <link href= {{ url_for('static', filename = 'css-custom.css') }} rel="stylesheet">
+</head>
+""")
+        for line in f1:
+            f2.write(line)
+    os.remove("templates/test.html")
     return True
