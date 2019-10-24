@@ -104,10 +104,8 @@ WHERE {
     # run the query
     sparql.setQuery(begin)
     results = sparql.query()
-
     # set max colwidth off
     pd.set_option('display.max_colwidth', -1)
-
     # load as pandas dataframe
     processed_results = json.load(results.response)
     cols = processed_results['head']['vars']
@@ -117,7 +115,8 @@ WHERE {
         for c in cols:
             item.append(row.get(c, {}).get('value'))
         out.append(item)
-    pd.DataFrame(out, columns=cols).to_html("templates/test.html")
+    df = pd.DataFrame(out, columns=cols)
+    df.reindex(columns=['linktitle', 'link', 'description', 'title']).to_html("templates/test.html")
     with open("templates/test.html", "r") as f1, open("templates/results.html", "w", encoding="utf-8") as f2:
         f2.write("""<head>
     <link href= {{ url_for('static', filename = 'css-custom.css') }} rel="stylesheet">
