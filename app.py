@@ -118,7 +118,7 @@ WHERE {
             item.append(row.get(c, {}).get('value'))
         out.append(item)
     pd.DataFrame(out, columns=cols).to_html("templates/test.html")
-    with open("templates/test.html", "r") as f1, open("templates/results.html", "w") as f2:
+    with open("templates/test.html", "r") as f1, open("templates/results.html", "w", encoding="utf-8") as f2:
         f2.write("""<head>
     <link href= {{ url_for('static', filename = 'css-custom.css') }} rel="stylesheet">
 </head>
