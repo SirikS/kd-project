@@ -105,6 +105,9 @@ WHERE {
     sparql.setQuery(begin)
     results = sparql.query()
 
+    # set max colwidth off
+    pd.set_option('display.max_colwidth', -1)
+
     # load as pandas dataframe
     processed_results = json.load(results.response)
     cols = processed_results['head']['vars']
