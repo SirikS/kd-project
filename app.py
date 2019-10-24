@@ -120,6 +120,17 @@ WHERE {
     with open("templates/test.html", "r") as f1, open("templates/results.html", "w", encoding="utf-8") as f2:
         f2.write("""<head>
     <link href= {{ url_for('static', filename = 'css-custom.css') }} rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function(){
+        $('td').each(function(){
+            var content = $(this).html();
+            var Rexp =  /((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g;
+            content = content.replace(Rexp, "<a href='$1' target='_blank'>$1</a>");
+            $(this).html(content);
+        });
+    });
+</script>
 </head>
 """)
         for line in f1:
