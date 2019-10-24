@@ -1,4 +1,4 @@
-# kd-project
+# Knowlegde & Data Project
 
 A webpage that gives recommended recipes based on the ingredients you fill in. 
 This can also be filtered by the appliances you have. 
