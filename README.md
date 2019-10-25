@@ -6,6 +6,7 @@ This can also be filtered by the appliances you have.
 To run this program you have to install a couple of modules.
 1. `pip install flask`
 2. `pip install pandas`
+3. `pip install SPARQLWrapper`
 
 After this the program can be run by typing `flask run` in the terminal. 
 
